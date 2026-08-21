@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta de endereço por CEP com resultado rápido e acessível.">
+    <title>Consulta CEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <form id="frmCep" class="card" novalidate>
+            <div class="header">
+                <div class="icon" aria-hidden="true">📍</div>
+                <div>
+                    <h1>Consulta CEP</h1>
+                    <p class="subtitle">Encontre o endereço com rapidez e facilidade.</p>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="cep">CEP</label>
+                <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    maxlength="8"
+                    inputmode="numeric"
+                    placeholder="Digite apenas números"
+                    aria-describedby="status"
+                    autocomplete="postal-code"
+                    required>
+            </div>
+
+            <div class="acoes">
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+                <button type="button" class="btn btn-secondary" onclick="limparTela()">Limpar</button>
+            </div>
+
+            <p id="status" class="status" aria-live="polite"></p>
+
+            <div class="campo">
+                <label for="logradouro">Logradouro</label>
+                <input type="text" id="logradouro" name="logradouro" readonly>
+            </div>
+
+            <div class="campo">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro" readonly>
+            </div>
+
+            <div class="campo grid-duo">
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" readonly>
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" readonly>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
